@@ -7,7 +7,7 @@
 Entregar um software capaz de:
 
 1. **Ingestão**: Ler um arquivo PDF e salvar suas informações em um banco de dados PostgreSQL com extensão **pgVector**.
-2. **Busca**: Permitir que o usuário faça perguntas via **linha de comando (CLI)** e receba respostas **baseadas apenas** no conteúdo do PDF. &#x20;
+2. **Busca**: Permitir que o usuário faça perguntas via **linha de comando (CLI)** e receba respostas **baseadas apenas** no conteúdo do PDF. 
 
 ---
 
@@ -21,7 +21,7 @@ Entregar um software capaz de:
 **Perguntas fora do contexto:**
 
 * **PERGUNTA:** Quantos clientes temos em 2024?
-  **RESPOSTA:** Não tenho informações necessárias para responder sua pergunta. &#x20;
+  **RESPOSTA:** Não tenho informações necessárias para responder sua pergunta. 
 
 ---
 
@@ -30,7 +30,7 @@ Entregar um software capaz de:
 * **Linguagem:** Python
 * **Framework:** LangChain
 * **Banco de dados:** PostgreSQL + pgVector
-* **Execução do banco:** Docker & Docker Compose (docker-compose fornecido no repositório de exemplo) &#x20;
+* **Execução do banco:** Docker & Docker Compose (docker-compose fornecido no repositório de exemplo) 
 
 ---
 
@@ -40,7 +40,7 @@ Entregar um software capaz de:
 * **Embeddings:** `from langchain_openai import OpenAIEmbeddings`
 * **PDF:** `from langchain_community.document_loaders import PyPDFLoader`
 * **Ingestão:** `from langchain_postgres import PGVector`
-* **Busca:** `similarity_search_with_score(query, k=10)` &#x20;
+* **Busca:** `similarity_search_with_score(query, k=10)` 
 
 ---
 
@@ -55,7 +55,7 @@ Entregar um software capaz de:
 
   * Crie uma API Key.
   * **Embeddings:** `text-embedding-3-small`
-  * **LLM para responder:** `gemini-2.5-flash-lite` &#x20;
+  * **LLM para responder:** `gemini-2.5-flash-lite` 
 
 > Observação: os nomes de modelos acima são os especificados no documento de referência deste desafio.
 
@@ -67,7 +67,7 @@ Entregar um software capaz de:
 
 * Dividir o PDF em *chunks* de **1000** caracteres com **150** de *overlap*.
 * Converter cada *chunk* em *embedding*.
-* Armazenar os vetores no PostgreSQL com **pgVector**. &#x20;
+* Armazenar os vetores no PostgreSQL com **pgVector**. 
 
 ### 2) Consulta via CLI
 
@@ -76,7 +76,7 @@ Criar um script Python que simula um chat no terminal. Ao receber uma pergunta:
 1. Vetorizar a pergunta.
 2. Buscar os **10** resultados mais relevantes (**k=10**) no banco vetorial.
 3. Montar o **prompt** e chamar a **LLM**.
-4. Retornar a resposta ao usuário. &#x20;
+4. Retornar a resposta ao usuário. 
 
 #### Prompt (usar exatamente estas regras)
 
@@ -173,15 +173,15 @@ python src/chat.py
 
 ## Entregável
 
-* **Repositório público no GitHub** com todo o código-fonte e um **README** com instruções claras de execução. &#x20;
+* **Repositório público no GitHub** com todo o código-fonte e um **README** com instruções claras de execução. 
 
 ---
 
 ## Referências
 
-* **Documento base do desafio (PDF / plataforma Full Cycle)**.&#x20;
+* **Documento base do desafio (PDF / plataforma Full Cycle)**.
 * **Repositório template do desafio:** [https://github.com/devfullcycle/mba-ia-desafio-ingestao-busca/](https://github.com/devfullcycle/mba-ia-desafio-ingestao-busca/)
-* **Curso de nivelamento com LangChain:** [https://github.com/devfullcycle/mba-ia-niv-introducao-langchain/](https://github.com/devfullcycle/mba-ia-niv-introducao-langchain/) &#x20;
+* **Curso de nivelamento com LangChain:** [https://github.com/devfullcycle/mba-ia-niv-introducao-langchain/](https://github.com/devfullcycle/mba-ia-niv-introducao-langchain/) 
 
 ---
 
