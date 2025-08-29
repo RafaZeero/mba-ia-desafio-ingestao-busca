@@ -1,3 +1,12 @@
+import os
+
+from dotenv import load_dotenv
+from langchain.prompts import PromptTemplate
+from langchain_core.output_parsers import StrOutputParser
+from langchain_openai import ChatOpenAI
+
+load_dotenv()
+
 PROMPT_TEMPLATE = """
 CONTEXTO:
 {contexto}
@@ -25,5 +34,18 @@ PERGUNTA DO USUÁRIO:
 RESPONDA A "PERGUNTA DO USUÁRIO"
 """
 
+
 def search_prompt():
-    pass
+    prompt = PromptTemplate(
+        input_variables=["contexto", "pergunta"],
+        template=PROMPT_TEMPLATE,
+    )
+
+    api_key = os.getenv("LLM_API_KEY")
+
+    if not api_key:
+        return
+
+    llm = ChatOpenAI(model="gpt-5-nano", api_key=api_key)
+
+    return prompt | llm | StrOutputParser()
