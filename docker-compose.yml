@@ -1,7 +1,7 @@
 services:
   postgres:
     image: pgvector/pgvector:pg17
-    container_name: postgres_rag
+    container_name: desafio_ingestao_busca_rag
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
@@ -15,7 +15,7 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
-    restart: unless-stopped
+    restart: no
 
   bootstrap_vector_ext:
     image: pgvector/pgvector:pg17
@@ -31,3 +31,4 @@ services:
 
 volumes:
   postgres_data:
+
