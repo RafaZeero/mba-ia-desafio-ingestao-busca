@@ -5,7 +5,11 @@
 ### Dependências
 
 Para fazer inicializar o projeto, você precisa do UV, um package e project manager.
-Veja aqui como instalar: https://docs.astral.sh/uv/getting-started/installation/
+Rode o comando abaixo, em caso de dúvidas, acesse: https://docs.astral.sh/uv/getting-started/installation/
+
+```sh
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
 
 ### Passo a passo
 
