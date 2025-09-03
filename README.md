@@ -17,4 +17,19 @@ uv sync
 
 Isso vai criar uma pasta `.venv` e instalar as dependencias que estao no arquivo `pyproject.toml`
 
+Ao instalar as dependencias, você precisa iniciar a ingestao de documentos. Isso requer o container rodando com o pgvector
+seguido da adicao do(s) documento(s) vetorizados nessa vector store.
+Para isso, execute os seguintes comandos:
 
+```sh
+docker compose up -d
+poe ingest
+```
+
+
+O setup está pronto, agora você pode rodar o projeto com o comando:
+
+
+```sh
+poe chat
+```
